@@ -18,17 +18,14 @@ def algebra(expr):
     if ((list_expr[int(num_list[0])] == '*') | (list_expr[int(num_list[0])] == '/')):
         if (list_expr[int(num_list[0])] == '*'):
             x = a * b
-            print(x)
         if (list_expr[int(num_list[0])] == '/'):
             x = a / b
-            print(x)
     if ((list_expr[int(num_list[0])] == '+') | (list_expr[int(num_list[0])] == '-')):
         if (list_expr[int(num_list[0])] == '+'):
             x = a + b
-            print(x)
         if (list_expr[int(num_list[0])] == '-'):
             x = a + c
-            print(x)
     else:
         pass
+    print(x) #value of first operator
     
