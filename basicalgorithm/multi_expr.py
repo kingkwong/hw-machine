@@ -5,12 +5,15 @@ def algebra(expr):
     for j in list_expr:
         num_list = []
         for i, item in enumerate(list_expr):
+            if (item == '^'):
+                num_list.extend(str(i))
+        for i, item in enumerate(list_expr):
             if (item == '*' or item == '/'):
                 num_list.extend(str(i))
         for i, item in enumerate(list_expr):
             if (item == '+' or item == '-'):
                 num_list.extend(str(i))
-        print(num_list) #bugtest: print out indexes of operators
+        #print(num_list) #bugtest: print out indexes of operators
         try:
             int(j)
         except ValueError:
@@ -18,7 +21,9 @@ def algebra(expr):
             a = int(list_expr[int(num_list[0]) - 1])
             b = int(list_expr[int(num_list[0]) + 1])
             c = -b
-            #first operation
+            #perform first operation 
+            if (list_expr[int(num_list[0])] == '^')
+                x = a ** b
             if ((list_expr[int(num_list[0])] == '*') | (list_expr[int(num_list[0])] == '/')):
                 if (list_expr[int(num_list[0])] == '*'):
                     x = a * b
@@ -31,7 +36,7 @@ def algebra(expr):
                     x = a + c
             else:
                 pass
-            print(x) #bugtest: print out result of first operator
+            #print(x) #prints out result of first operators
             list_expr.pop(int(num_list[0]) - 1)
             list_expr.pop(int(num_list[0]))
             list_expr[int(num_list[0]) - 1] = str(x)
@@ -39,12 +44,15 @@ def algebra(expr):
     for j in list_expr:
         num_list = []
         for i, item in enumerate(list_expr):
+            if (item == '^'):
+                num_list.extend(str(i))
+        for i, item in enumerate(list_expr):
             if (item == '*' or item == '/'):
                 num_list.extend(str(i))
         for i, item in enumerate(list_expr):
             if (item == '+' or item == '-'):
                 num_list.extend(str(i))
-        print(num_list) #bugtest: print out indexes of operators
+        #print(num_list) #bugtest: print out indexes of operators
         try:
             int(j)
         except ValueError:
@@ -52,7 +60,9 @@ def algebra(expr):
             a = int(list_expr[int(num_list[0]) - 1])
             b = int(list_expr[int(num_list[0]) + 1])
             c = -b
-            #first operation
+            #perform additional operations
+            if (list_expr[int(num_list[0])] == '^')
+                x = a ** b
             if ((list_expr[int(num_list[0])] == '*') | (list_expr[int(num_list[0])] == '/')):
                 if (list_expr[int(num_list[0])] == '*'):
                     x = a * b
@@ -65,8 +75,9 @@ def algebra(expr):
                     x = a + c
             else:
                 pass
-            print(x) #bugtest: print out result of first operator
+            #print(x) #prints result of each operation
+        print(x) #print answer
             list_expr.pop(int(num_list[0]) - 1)
             list_expr.pop(int(num_list[0]))
             list_expr[int(num_list[0]) - 1] = str(x)
-            print(list_expr)          
+            #print(list_expr) #prints simplification of expression each time         
